@@ -1,6 +1,5 @@
 package viewer;
 
-import java.lang.Integer;
 import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
