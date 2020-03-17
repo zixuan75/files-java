@@ -71,8 +71,7 @@ public class Window extends JPanel{
 		add(leftPanel, BorderLayout.WEST);
 		
 		JPanel centerPanel = new JPanel();
-		
-		JMenuBar newMenuBar = new JMenuBar();
+
 		menuBar.add(menu);
 		outputfield = new JLabel();
 		centerPanel.add(outputfield);
