@@ -51,7 +51,7 @@ public class Window extends JPanel{
 	private static JMenu menu;
 	private static JButton sqrt;
 	private static boolean sqrtModeOn = false;
-	private static double ans = 2.0;
+	private static double ans;
 	private static JMenuBar menuBar;
 	public Window() {
 		menu = new JMenu("Operation");
