@@ -13,7 +13,7 @@ public class SecondWindow extends JPanel {
 		JPanel panel = new JPanel();
 		Font font=new Font("DejaVu Sans", 5, 12);
     	textArea.setFont(font);
-    	textArea.setText("Welcome to the Calculator, There is addition, subtraction, multiplication, division, powers, and Square Root Mode (all in a menu), which we'll get into later.The first operations do what they are supposed to do. You can type Ans or ans which means the answer of the previous question (if there is any). However, you cannot do both of these together. The Sqrt Mode removes one of the inputs (because there is only one for Sqrt) and the menu. It adds a Sqrt button. You can type Ans or ans on the remaining input and it will function just like the other operations do. Once you hit the button, you are back in regular mode. That is all.");
+    	textArea.setText("Welcome to the Calculator, There is addition, subtraction, multiplication, division, powers, and Square Root Mode (all in a menu), which we'll get into later.The first operations do what they are supposed to do. You can type Ans or ans which means the answer of the previous question (if there is any). However, you cannot do both of these together. The Sqrt Mode removes one of the inputs (because there is only one for Sqrt) and the menu. It adds a Sqrt button. You can type Ans or ans on the remaining input and it will function just like the other operations do. Once you hit the button, it does its thing and you are back in regular mode. That is all.");
     	textArea.setLineWrap(true);
     	textArea.setEditable(false);
     	panel.add(textArea);
