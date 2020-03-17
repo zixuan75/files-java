@@ -38,7 +38,7 @@ import javax.swing.JTextField;
 
 public class Window extends JPanel{
 	private static final long serialVersionUID = 1L;
-	private static JFrame frame = new JFrame("Window");
+	private static JFrame frame = new JFrame("Calculator");
 	private static Action add = new AddAction();
 	private static Action subtract = new SubtractAction();
 	private static Action multiply = new MultiplyAction();
