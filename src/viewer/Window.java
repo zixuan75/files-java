@@ -50,7 +50,6 @@ public class Window extends JPanel{
 	private static JLabel outputfield;
 	private static JMenu menu;
 	private static JButton sqrt;
-	private static boolean sqrtModeOn = false;
 	private static double ans;
 	private static JMenuBar menuBar;
 	public Window() {
