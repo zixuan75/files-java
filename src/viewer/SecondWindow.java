@@ -12,13 +12,13 @@ public class SecondWindow extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static JFrame frame = new JFrame("Usage");
 	private static JTextArea textArea=new JTextArea(25, 60);
+	private static JButton done;
 	public SecondWindow() {
 		JPanel buttonPanel = new JPanel();
-		JButton done = new JButton("Done reading");
+		done = new JButton("Done reading");
 		done.addActionListener(new DoneAction());
 		buttonPanel.add(done);
 		add(buttonPanel, BorderLayout.WEST);
-		
 		JPanel panel = new JPanel();
 		Font font=new Font("DejaVu Sans", 5, 12);
     	textArea.setFont(font);
@@ -38,7 +38,9 @@ public class SecondWindow extends JPanel {
 		private static final long serialVersionUID = 1L;
 		public DoneAction() {}
 		public void actionPerformed(ActionEvent arg0) {
-
+			textArea.setVisible(false);
+			done.setVisible(false);
+			frame.setVisible(false);
 		}
 	}
 }
