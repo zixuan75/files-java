@@ -2,7 +2,7 @@ package viewer;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
+import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.Font;
 
@@ -12,7 +12,8 @@ public class SecondWindow extends JPanel {
 	private static JTextArea textArea=new JTextArea(25, 60);
 	public SecondWindow() {
 		JPanel buttonPanel = new JPanel();
-		
+		JButton done = new JButton("Done reading");
+		buttonPanel.add(done);
 		add(buttonPanel, BorderLayout.WEST);
 		
 		JPanel panel = new JPanel();
