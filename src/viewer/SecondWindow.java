@@ -45,7 +45,6 @@ public class SecondWindow extends JPanel {
 		public void actionPerformed(ActionEvent arg0) {
 			textArea.setVisible(false);
 			done.setVisible(false);
-			//frame.setVisible(false);
 			readAgain.setVisible(true);
 		}
 	}
@@ -53,7 +52,9 @@ public class SecondWindow extends JPanel {
 		private static final long serialVersionUID = 1L;
 		public ReadAgainAction() {}
 		public void actionPerformed(ActionEvent arg0) {
-
+			textArea.setVisible(true);
+			done.setVisible(true);
+			readAgain.setVisible(false);
 		}
 	}
 }

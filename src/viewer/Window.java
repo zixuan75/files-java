@@ -4,7 +4,6 @@ package viewer;
 import java.awt.BorderLayout;
 import java.awt.Color;
 //import java.awt.FlowLayout;
-import java.awt.Font;
 //import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -76,6 +75,7 @@ public class Window extends JPanel{
 		centerPanel.add(menuBar);
 		sqrt = new JButton("Sqrt");
 		sqrt.addActionListener(new SqrtAction());
+		sqrt.setForeground(Color.GRAY);
 		sqrt.setVisible(false);
 		centerPanel.add(sqrt);
 		add(centerPanel, BorderLayout.CENTER);
