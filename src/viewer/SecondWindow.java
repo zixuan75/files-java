@@ -3,8 +3,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.AbstractAction;
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 
 public class SecondWindow extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -13,6 +15,7 @@ public class SecondWindow extends JPanel {
 	public SecondWindow() {
 		JPanel buttonPanel = new JPanel();
 		JButton done = new JButton("Done reading");
+		done.addActionListener(new DoneAction());
 		buttonPanel.add(done);
 		add(buttonPanel, BorderLayout.WEST);
 		
@@ -30,5 +33,12 @@ public class SecondWindow extends JPanel {
     	frame.setVisible(true);
     	frame.setSize(790, 260);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	private static class DoneAction extends AbstractAction {
+		private static final long serialVersionUID = 1L;
+		public DoneAction() {}
+		public void actionPerformed(ActionEvent arg0) {
+
+		}
 	}
 }
