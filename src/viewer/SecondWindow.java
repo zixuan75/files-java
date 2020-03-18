@@ -11,6 +11,10 @@ public class SecondWindow extends JPanel {
 	private static JFrame frame = new JFrame("Usage");
 	private static JTextArea textArea=new JTextArea(25, 60);
 	public SecondWindow() {
+		JPanel buttonPanel = new JPanel();
+		
+		add(buttonPanel, BorderLayout.WEST);
+		
 		JPanel panel = new JPanel();
 		Font font=new Font("DejaVu Sans", 5, 12);
     	textArea.setFont(font);
