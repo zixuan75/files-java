@@ -5,6 +5,7 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 
@@ -18,10 +19,12 @@ public class SecondWindow extends JPanel {
 		JPanel buttonPanel = new JPanel();
 		readAgain = new JButton("Read again");
 		readAgain.addActionListener(new ReadAgainAction());
+		readAgain.setForeground(Color.GRAY);
 		readAgain.setVisible(false);
 		buttonPanel.add(readAgain);
 		done = new JButton("Done reading");
 		done.addActionListener(new DoneAction());
+		done.setForeground(Color.GRAY);
 		buttonPanel.add(done);
 		add(buttonPanel, BorderLayout.WEST);
 		JPanel panel = new JPanel();
