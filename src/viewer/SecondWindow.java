@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 
 public class SecondWindow extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private static JFrame frame = new JFrame("Usage");
 	private static JTextArea textArea=new JTextArea(25, 60);
 	public SecondWindow() {
