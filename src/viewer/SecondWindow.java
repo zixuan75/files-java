@@ -13,8 +13,13 @@ public class SecondWindow extends JPanel {
 	private static JFrame frame = new JFrame("Usage");
 	private static JTextArea textArea=new JTextArea(25, 60);
 	private static JButton done;
+	private static JButton readAgain;
 	public SecondWindow() {
 		JPanel buttonPanel = new JPanel();
+		readAgain = new JButton("Read again");
+		readAgain.addActionListener(new ReadAgainAction());
+		readAgain.setVisible(false);
+		buttonPanel.add(readAgain);
 		done = new JButton("Done reading");
 		done.addActionListener(new DoneAction());
 		buttonPanel.add(done);
@@ -40,7 +45,15 @@ public class SecondWindow extends JPanel {
 		public void actionPerformed(ActionEvent arg0) {
 			textArea.setVisible(false);
 			done.setVisible(false);
-			frame.setVisible(false);
+			//frame.setVisible(false);
+			readAgain.setVisible(true);
+		}
+	}
+	private static class ReadAgainAction extends AbstractAction {
+		private static final long serialVersionUID = 1L;
+		public ReadAgainAction() {}
+		public void actionPerformed(ActionEvent arg0) {
+
 		}
 	}
 }
