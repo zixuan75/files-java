@@ -19,12 +19,12 @@ public class SecondWindow extends JPanel {
 		JPanel buttonPanel = new JPanel();
 		readAgain = new JButton("Read again");
 		readAgain.addActionListener(new ReadAgainAction());
-		readAgain.setForeground(Color.GRAY);
+		readAgain.setForeground(Color.DARK_GRAY);
 		readAgain.setVisible(false);
 		buttonPanel.add(readAgain);
 		done = new JButton("Done reading");
 		done.addActionListener(new DoneAction());
-		done.setForeground(Color.GRAY);
+		done.setForeground(Color.DARK_GRAY);
 		buttonPanel.add(done);
 		add(buttonPanel, BorderLayout.WEST);
 		JPanel panel = new JPanel();

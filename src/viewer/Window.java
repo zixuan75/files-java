@@ -75,7 +75,7 @@ public class Window extends JPanel{
 		centerPanel.add(menuBar);
 		sqrt = new JButton("Sqrt");
 		sqrt.addActionListener(new SqrtAction());
-		sqrt.setForeground(Color.GRAY);
+		sqrt.setForeground(Color.DARK_GRAY);
 		sqrt.setVisible(false);
 		centerPanel.add(sqrt);
 		add(centerPanel, BorderLayout.CENTER);
