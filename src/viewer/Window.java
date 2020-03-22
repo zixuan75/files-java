@@ -117,6 +117,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldOne.setText("");
 			numberfieldTwo.setText("");
@@ -149,6 +151,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldOne.setText("");
 			numberfieldTwo.setText("");
@@ -181,6 +185,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldOne.setText("");
 			numberfieldTwo.setText("");
@@ -213,6 +219,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldOne.setText("");
 			numberfieldTwo.setText("");
@@ -233,6 +241,7 @@ public class Window extends JPanel{
 				double number = 0;
 				if (!b.equals("ans") && !b.equals("Ans")) {
 					if (Double.parseDouble(b) == 0) {
+						outputfield.setText("");
 						System.err.println("Never divide by zero!");
 					} else {
 						if ( a.equals("Ans") ||
@@ -251,6 +260,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldOne.setText("");
 			numberfieldTwo.setText("");
@@ -281,6 +292,7 @@ public class Window extends JPanel{
 						var = Math.sqrt(ans);
 				} else {
 					if (Math.signum(Double.parseDouble(numberfieldOne.getText())) == -1.0){
+						outputfield.setText("");
 						System.err.println("Never square root an negative number");
 					} else {
 						var = Math.sqrt(Double.parseDouble(numberfieldOne.getText()));
@@ -292,6 +304,8 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
+				
+				outputfield.setText("");
 			}
 			numberfieldTwo.setVisible(true);
 			sqrt.setVisible(false);
