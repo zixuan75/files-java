@@ -2,6 +2,7 @@ package viewer;
 
 //import java.awt.*;
 import java.awt.BorderLayout;
+import java.lang.Boolean;
 import java.awt.Color;
 //import java.awt.FlowLayout;
 //import java.awt.GridLayout;
@@ -21,6 +22,7 @@ import java.lang.NumberFormatException;
 //import java.io.OutputStreamWriter;
 //import java.io.Writer;
 //import java.util.Scanner;
+import java.lang.Integer;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -32,10 +34,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+//import numbers.Number;
 
 
 
-public class Window extends JPanel{
+
+public class Window extends JPanel {
+	//private static int x;
 	private static final long serialVersionUID = 1L;
 	private static JFrame frame = new JFrame("Calculator");
 	private static Action add = new AddAction();
@@ -44,10 +49,17 @@ public class Window extends JPanel{
 	private static Action divide = new DivideAction();
 	private static Action power = new PowerAction();
 	private static Action sqrtMode = new SqrtModeAction();
+	//private static Action number = new NumberAction(x);
+	private static boolean sqrtModeOn = false;
 	private static JTextField numberfieldOne;
 	private static JTextField numberfieldTwo;
 	private static JLabel outputfield;
-	private static JMenu menu;
+    private static JMenu menu;
+	private static JButton[] numbers = new JButton[10];
+	private static JButton left;
+	private static JButton right;
+	private static boolean side;
+	private static boolean clicked;
 	private static JButton sqrt;
 	private static double ans;
 	private static JMenuBar menuBar;
@@ -72,7 +84,36 @@ public class Window extends JPanel{
 		menuBar.add(menu);
 		outputfield = new JLabel();
 		centerPanel.add(outputfield);
+		left = new JButton("Left");
+		left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				side = false;
+				clicked = true;
+			}
+		});
+		centerPanel.add(left);
+		for (int x = 0; x < 5; x += 1) {
+			numbers[x] = new JButton(Integer.toString(x));
+			numbers[x].addActionListener(new NumberAction(x));
+			centerPanel.add(numbers[x]);
+		}
+		
 		centerPanel.add(menuBar);
+		
+		for (int x = 5; x < 10; x += 1) {
+			numbers[x] = new JButton(Integer.toString(x));
+			numbers[x].addActionListener(new NumberAction(x));
+			centerPanel.add(numbers[x]);
+		}
+		right = new JButton("Right");
+		right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				side = true;
+				clicked = true;
+			}
+		});
+		centerPanel.add(right);
+		
 		sqrt = new JButton("Sqrt");
 		sqrt.addActionListener(new SqrtAction());
 		sqrt.setForeground(Color.DARK_GRAY);
@@ -91,6 +132,7 @@ public class Window extends JPanel{
     	frame.setSize(1200, 550);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+	
 	private static class AddAction extends AbstractAction {
 		private static final long serialVersionUID = 1L;
 		public AddAction() {
@@ -278,6 +320,12 @@ public class Window extends JPanel{
 			numberfieldTwo.setVisible(false);
 			sqrt.setVisible(true);
 			menuBar.setVisible(false);
+			right.setVisible(false);
+			left.setVisible(false);
+			Window.sqrtModeOn = true;
+//			for (int x = 0; x < 10; x ++) {
+//				numbers[x].setVisible(false);
+//			}
 		}
 	}
 	private static class SqrtAction extends AbstractAction {
@@ -304,14 +352,40 @@ public class Window extends JPanel{
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
 				e.printStackTrace();
-				
+			
 				outputfield.setText("");
 			}
 			numberfieldTwo.setVisible(true);
 			sqrt.setVisible(false);
 			menuBar.setVisible(true);
+			right.setVisible(true);
+			left.setVisible(true);
 			numberfieldOne.setText("");
+			sqrtModeOn = false;
 		}
 		
+	}
+	private static class NumberAction extends AbstractAction {
+		private static final long serialVersionUID = 1L;
+		private int number;
+		private NumberAction (int number) {
+			this.number = number;
+		}
+		public void actionPerformed(ActionEvent arg0) {
+			if (sqrtModeOn == false) {
+				if (side == true) {
+					numberfieldTwo.setText(numberfieldTwo.getText() + Integer.toString(number));
+				} else if (side == false) {
+					if (clicked == false) {
+						System.err.println("Set side first");
+					} else {
+						numberfieldOne.setText(numberfieldOne.getText() + Integer.toString(number));
+					}
+				}
+			} else {
+				numberfieldOne.setText(numberfieldOne.getText() + Integer.toString(number));
+			}
+			
+		}
 	}
 }
