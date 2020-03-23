@@ -129,7 +129,7 @@ public class Window extends JPanel {
 	public void showWindow() {
     	frame.add(new Window());
     	frame.setVisible(true);
-    	frame.setSize(1200, 550);
+    	frame.setSize(1500, 550);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 	
