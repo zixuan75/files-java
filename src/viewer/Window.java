@@ -1,24 +1,41 @@
 package viewer;
 
+
 //import java.awt.*;
 import java.awt.BorderLayout;
+import java.lang.Boolean;
 import java.awt.Color;
 //import java.awt.FlowLayout;
 //import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.KeyEvent;
+//import java.io.BufferedReader;
+//import java.io.BufferedWriter;
+//import java.io.File;
+//import java.io.FileNotFoundException;
+import java.lang.NumberFormatException;
+//import java.io.DivideByZeroException;
+//import java.io.FileOutputStream;
+//import java.io.FileReader;
+//import java.io.FileWriter;
+//import java.io.IOException;
+//import java.io.OutputStreamWriter;
+//import java.io.Writer;
+//import java.util.Scanner;
+import java.lang.Integer;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 //import numbers.Number;
+
 
 public class Window extends JPanel {
 	// private static int x;
@@ -39,7 +56,6 @@ public class Window extends JPanel {
 	private static JButton[] numbers = new JButton[10];
 	private static JButton left;
 	private static JButton right;
-	private static int ansCount = 0;
 	private static boolean side;
 	private static boolean clicked;
 	private static JButton[] negatives = new JButton[2];
@@ -187,7 +203,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(var));
 				ans = var;
-				ansCount++;
 				System.out.println(var);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
@@ -224,7 +239,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(var));
 				ans = var;
-				ansCount++;
 				System.out.println(var);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
@@ -261,7 +275,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(var));
 				ans = var;
-				ansCount++;
 				System.out.println(var);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
@@ -299,7 +312,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(var));
 				ans = var;
-				ansCount++;
 				System.out.println(var);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
@@ -349,7 +361,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(number));
 				ans = number;
-				ansCount++;
 				System.out.println(number);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
@@ -412,7 +423,6 @@ public class Window extends JPanel {
 				}
 				outputfield.setText(Double.toString(var));
 				ans = var;
-				ansCount++;
 				System.out.println(var);
 			} catch (NumberFormatException e) {
 				System.err.println("Only numbers allowed!");
